@@ -61,7 +61,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
-                                            <th>Position</th>
+                                            {{-- <th>Position</th> --}}
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
@@ -76,9 +76,9 @@
                                                 <td>
                                                     {{ $user->phone }}
                                                 </td>
-                                                <td>
+                                                {{-- <td>
                                                     {{ $user->position }}
-                                                </td>
+                                                </td> --}}
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">
