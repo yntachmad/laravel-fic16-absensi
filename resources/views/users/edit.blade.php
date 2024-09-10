@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
 @section('title', 'Advanced Forms')
-=======
-@section('title', 'Edit User')
->>>>>>> 66e4cb0 (edit)
 
 @push('style')
     <!-- CSS Libraries -->
@@ -30,12 +26,9 @@
 
             <div class="section-body">
                 <h2 class="section-title">Users</h2>
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 66e4cb0 (edit)
                 <div class="card">
                     <form action="{{ route('users.update', $user) }}" method="POST">
                         @csrf
@@ -50,11 +43,7 @@
                                     class="form-control @error('name')
                                 is-invalid
                             @enderror"
-<<<<<<< HEAD
                                     name="name" value="{{ old('name', $user->name) }}">
-=======
-                                    name="name" value="{{ $user->name }}">
->>>>>>> 66e4cb0 (edit)
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -67,11 +56,7 @@
                                     class="form-control @error('email')
                                 is-invalid
                             @enderror"
-<<<<<<< HEAD
                                     name="email" value="{{ old('email', $user->email) }}">
-=======
-                                    name="email" value="{{ $user->email }}">
->>>>>>> 66e4cb0 (edit)
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -89,11 +74,7 @@
                                     <input type="password"
                                         class="form-control @error('password')
                                 is-invalid
-<<<<<<< HEAD
                                 @enderror"
-=======
-                            @enderror"
->>>>>>> 66e4cb0 (edit)
                                         name="password">
                                 </div>
                                 @error('password')
@@ -104,7 +85,6 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-<<<<<<< HEAD
                                 <input type="number"
                                     class="form-control @error('email')
                                 is-invalid
@@ -123,17 +103,6 @@
                                 is-invalid
                             @enderror"
                                     name="position">
-=======
-                                <input type="number" class="form-control" name="phone" value="{{ $user->phone }}">
-                            </div>
-                            <div class="form-group">
-                                <label>Position</label>
-                                <input type="text"
-                                    class="form-control @error('position')
-                                is-invalid
-                            @enderror"
-                                    name="position" value="{{ $user->position }}">
->>>>>>> 66e4cb0 (edit)
                                 @error('position')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -142,21 +111,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Department</label>
-<<<<<<< HEAD
                                 <input type="text" value="{{ old('department', $user->department) }}"
                                     class="form-control @error('department')
                                 is-invalid
                             @enderror"
                                     name="department">
                                 @error('department')
-=======
-                                <input type="text"
-                                    class="form-control @error('department')
-                                is-invalid
-                            @enderror"
-                                    name="department" value="{{ $user->department }}">
-                                @error('departement')
->>>>>>> 66e4cb0 (edit)
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -166,7 +126,6 @@
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
-<<<<<<< HEAD
                                         <input type="radio" name="roles" value="admin" class="selectgroup-input"
                                             @if ($user->roles == 'admin') checked @endif>
                                         <span class="selectgroup-button">Admin</span>
@@ -179,20 +138,6 @@
                                     <label class="selectgroup-item">
                                         <input type="radio" name="roles" value="staff" class="selectgroup-input"
                                             @if ($user->roles == 'staff') checked @endif>
-=======
-                                        <input type="radio" name="role" value="admin" class="selectgroup-input"
-                                            @if ($user->role == 'admin') checked @endif>
-                                        <span class="selectgroup-button">Admin</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="supervisor" class="selectgroup-input"
-                                            @if ($user->role == 'supervisor') checked @endif>
-                                        <span class="selectgroup-button">Supervisor</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="staff" class="selectgroup-input"
-                                            @if ($user->role == 'staff') checked @endif>
->>>>>>> 66e4cb0 (edit)
                                         <span class="selectgroup-button">Staff</span>
                                     </label>
 
