@@ -42,7 +42,7 @@
                                     class="form-control @error('name')
                                 is-invalid
                             @enderror"
-                                    name="name" value="{{old('name')}}">
+                                    name="name" value="{{ old('name') }}">
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -55,7 +55,7 @@
                                     class="form-control @error('email')
                                 is-invalid
                             @enderror"
-                                    name="email" value="{{old('email')}}">
+                                    name="email" value="{{ old('email') }}">
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -84,18 +84,20 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="number" class="form-control @error('email')
+                                <input type="number"
+                                    class="form-control @error('email')
                                 is-invalid
-                            @enderror" name="phone" value="{{old('phone')}}">
-                            @error('phone')
+                            @enderror"
+                                    name="phone" value="{{ old('phone') }}">
+                                @error('phone')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <label>Position</label>
-                                <input type="text"
+                                <input type="text" value="{{ old('position') }}"
                                     class="form-control @error('position')
                                 is-invalid
                             @enderror"
@@ -105,8 +107,8 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div> --}}
-                            {{-- <div class="form-group">
+                            </div>
+                            <div class="form-group">
                                 <label>Department</label>
                                 <input type="text"
                                     class="form-control @error('department')
@@ -118,7 +120,7 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div> --}}
+                            </div>
                             <div class="form-group">
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">

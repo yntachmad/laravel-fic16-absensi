@@ -96,9 +96,9 @@
                                     </div>
                                 @enderror
                             </div>
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <label>Position</label>
-                                <input type="text"
+                                <input type="text" value="{{ old('position', $user->position) }}"
                                     class="form-control @error('position')
                                 is-invalid
                             @enderror"
@@ -108,10 +108,10 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div> --}}
-                            {{-- <div class="form-group">
+                            </div>
+                            <div class="form-group">
                                 <label>Department</label>
-                                <input type="text"
+                                <input type="text" value="{{ old('department', $user->department) }}"
                                     class="form-control @error('department')
                                 is-invalid
                             @enderror"
@@ -121,7 +121,7 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div> --}}
+                            </div>
                             <div class="form-group">
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">

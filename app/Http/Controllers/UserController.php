@@ -42,6 +42,8 @@ class UserController extends Controller
             'phone' => $request->phone,
             'roles' => $request->roles,
             'password' => Hash::make($request->password),
+            'position' => $request->position,
+            'department' => $request->department
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully!');
@@ -69,6 +71,8 @@ class UserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'roles' => $request->roles,
+            'position' => $request->position,
+            'department' => $request->department
         ]);
 
         if ($request->password) {
