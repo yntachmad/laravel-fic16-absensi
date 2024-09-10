@@ -47,8 +47,16 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully!');
+    }
 
-
+    //edit
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('users.edit', [
+            'user' => $user,
+            'type_menu' => 'users'
+        ]);
     }
 
     public function edit(User $user)
