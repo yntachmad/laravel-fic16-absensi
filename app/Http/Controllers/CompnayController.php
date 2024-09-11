@@ -13,8 +13,7 @@ class CompnayController extends Controller
     public function index()
     {
         //
-        $company = Company::find(1);
-        return view('company.show', compact('company'));
+
     }
 
     /**
@@ -39,6 +38,9 @@ class CompnayController extends Controller
     public function show(string $id)
     {
         //
+
+        $company = Company::find(1);
+        return view('company.show', compact('company'));
     }
 
     /**
