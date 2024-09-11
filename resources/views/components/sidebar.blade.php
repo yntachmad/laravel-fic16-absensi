@@ -20,12 +20,16 @@
                 </ul>
             </li>
             <li class="menu-header">Master Data</li>
-            <li class="nav-item dropdown {{ $type_menu === 'users' ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ $type_menu === 'master_data' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Users</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('users/index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('users.index') }}">User Data</a>
+                    </li>
+
+                    <li class="{{ Request::is('company/show', 1) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('company.show', 1) }}">Company Data</a>
                     </li>
                     {{-- <li class="{{ Request::is('users/create') ? 'active' : '' }}">
                         <a class="nav-link"

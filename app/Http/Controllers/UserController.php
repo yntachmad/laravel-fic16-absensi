@@ -16,7 +16,7 @@ class UserController extends Controller
 
         return view('users.index', [
             'users' => $users,
-            'type_menu' => 'users'
+            'type_menu' => 'master_data'
         ]);
 
     }
@@ -59,13 +59,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function edit(User $user)
-    {
-        return view('users.edit', [
-            'user' => $user,
-            'type_menu' => 'users'
-        ]);
-    }
+
 
     public function update(Request $request, User $user)
     {
