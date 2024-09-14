@@ -17,3 +17,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 Route::get('/company', [CompanyController::class, 'show'])->middleware('auth:sanctum');
 
 Route::post('/checkin', [AttendanceController::class, 'checkin'])->middleware('auth:sanctum');
+Route::post('/checkout', [AttendanceController::class, 'checkout'])->middleware('auth:sanctum');
+
+Route::get('/ischeckin', [AttendanceController::class, 'isCheckIn'])->middleware('auth:sanctum');
