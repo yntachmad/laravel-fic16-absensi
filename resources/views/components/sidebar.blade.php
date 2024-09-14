@@ -31,6 +31,10 @@
                     <li class="{{ Request::is('company/show', 1) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('company.show', 1) }}">Company Data</a>
                     </li>
+
+                    <li class="{{ Request::is('attendance/index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('attendance.index') }}">Attendances Data</a>
+                    </li>
                     {{-- <li class="{{ Request::is('users/create') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ route('users.create') }}">Create</a>
