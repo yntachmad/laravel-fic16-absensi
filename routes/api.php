@@ -20,3 +20,5 @@ Route::post('/checkin', [AttendanceController::class, 'checkin'])->middleware('a
 Route::post('/checkout', [AttendanceController::class, 'checkout'])->middleware('auth:sanctum');
 
 Route::get('/ischeckin', [AttendanceController::class, 'isCheckIn'])->middleware('auth:sanctum');
+
+Route::post('/update-profile', [AuthController::class, 'updateProfile'])->middleware('auth:sanctum');
