@@ -48,4 +48,42 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Logged out successfully'], 200);
     }
+
+    //update image profile & face embedding
+    public function updateProfile(Request $request)
+    {
+        //
+        $request->validate([
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'face_embedding' =>'required'
+        ]);
+
+        $user = $request->user();
+        $image = $request->file('image');
+        $face_embedding = $request->face_embedding;
+
+        //save image
+        $image->storeAs('public/images',$image->hashName());
+        $user->image_url = $image->hashName();
+        $user->face_embedding = $face_embedding;
+        $user->save();
+
+
+
+        //upload image
+        // $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        // $request->image->move(public_path('images/users'), $imageName);
+
+        // //store image path in user table
+        // $request->user()->update([
+        //     'image' => 'images/users/'.$imageName,
+        //     'face_embedding' => json_encode($request->face_embedding),
+        // ]);
+
+        return response()->json([
+            'message' => 'Profile updated successfully',
+            'user' =>$user],
+            200
+        );
+    }
 }
