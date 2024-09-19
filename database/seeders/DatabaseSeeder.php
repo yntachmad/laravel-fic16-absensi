@@ -21,6 +21,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'achmad',
             'email' => 'achmad@gmail.com',
             'password' => Hash::make('123456'),
+            'roles' => 'admin',
+            'position' => 'Staff',
+            'department' => 'IT',
+
+
         ]);
 
         \App\Models\Company::create([
@@ -37,6 +42,7 @@ class DatabaseSeeder extends Seeder
         $this->call(
             [
                 AttendanceSeeder::class,
+                PermissionSeeder::class,
             ]
         );
     }

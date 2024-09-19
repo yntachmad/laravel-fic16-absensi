@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\PermissionController;
 
 
 
@@ -22,5 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('company', CompanyController::class);
 
     Route::resource('attendance', AttendanceController::class);
+
+    Route::resource('permission', PermissionController::class);
 
 });

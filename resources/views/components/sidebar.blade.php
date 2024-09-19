@@ -35,6 +35,9 @@
                     <li class="{{ Request::is('attendance/index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('attendance.index') }}">Attendances Data</a>
                     </li>
+                    <li class="{{ Request::is('permission/index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('permission.index') }}">Permission</a>
+                    </li>
                     {{-- <li class="{{ Request::is('users/create') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ route('users.create') }}">Create</a>
