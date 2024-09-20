@@ -12,26 +12,25 @@ class PermissionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required','string','max:255'],
+            // 'name' => ['required','string','max:255'],
             // 'description' => ['required','string','max:255'],
             // 'user_id' => ['required','integer'],
-            'date_permission' => ['required','date'],
+            'date_permission' => ['required'],
             // 'reason' => ['required','string','max:255'],
             // 'image' => ['nullable','image','mimes:jpeg,png,jpg','max:2048'],
         ]);
 
         $permission = new Permission();
         $permission->user_id = $request->user()->id;
-        $permission->date_permission = $request->date;
+        $permission->date_permission = $request->date_permission;
         $permission->reason = $request->reason;
-        $permission->is_approved = false;
+        $permission->is_approved = 0;
 
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imageName = $permission->id . '.' . $image->getClientOriginalExtension();
-            $image->storeAs(public_path('storage/permission'), $imageName);
-            $permission->image = $imageName;
+            $image->storeAs('public/permission', $image->hashName());
+            $permission->image = $image->hashName();
 
         }
 
